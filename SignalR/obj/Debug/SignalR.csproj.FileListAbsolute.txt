@@ -65,6 +65,5 @@ D:\projects\SignalR\SignalR\bin\zh-Hans\Microsoft.Owin.Security.Facebook.resourc
 D:\projects\SignalR\SignalR\bin\zh-Hans\Microsoft.Owin.Security.Google.resources.dll
 D:\projects\SignalR\SignalR\bin\zh-Hans\Microsoft.Owin.Security.Twitter.resources.dll
 D:\projects\SignalR\SignalR\bin\zh-Hans\Microsoft.Owin.Security.MicrosoftAccount.resources.dll
-D:\projects\SignalR\SignalR\obj\Debug\SignalR.csprojResolveAssemblyReference.cache
 D:\projects\SignalR\SignalR\obj\Debug\SignalR.dll
 D:\projects\SignalR\SignalR\obj\Debug\SignalR.pdb

@@ -23,6 +23,7 @@ namespace SignalR
             {
                 if (ShouldNotifyClient(record))
                 {
+                 
                     Clients.Caller.sendMessage(string.Format("Processing item {0} of {1}", record, recordsToBeProcessed));
                     //Clients.All.sendMessage(string.Format("Processing item {0} of {1}", record, recordsToBeProcessed));
                     //Clients.
