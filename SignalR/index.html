@@ -1,0 +1,55 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <script src="Scripts/jquery-1.10.2.js"></script>
+    
+    <!-- Import the noty scripts -->
+    <script src="Scripts/noty/jquery.noty.js"></script>
+    <script src="Scripts/noty/layouts/top.js"></script>
+    <script src="Scripts/noty/themes/default.js"></script>
+
+    <!-- Import the SignalR scripts -->
+    <script src="Scripts/jquery.signalR-2.2.0.js"></script>
+    <script src="signalr/hubs"></script>
+
+</head>
+<body>
+    <div style="margin-top: 100px;">
+        <!-- This button will trigger the time consuming operation -->
+        <input type="button" id="mybutton" value="Call a time consuming server side operation" />
+    </div>
+    <script type="text/javascript">
+        $(function () {
+            // Initialize the connection to the server
+            var realtimeNotifier = $.connection.realtimeNotifierHub;
+
+            // Preparing a client side function called sendMessage that will be called from the server side
+            realtimeNotifier.client.sendMessage = function (message) {
+                showOrUpdateSuccessMessage(message, false);
+            };
+
+            // Establish the connection to the server. When done, sets the click of the button
+            $.connection.hub.start().done(function () {
+                $('#mybutton').click(function () {
+                    // When the cutton is clicked, call the method DoLongOperation defined in the Hub
+                    realtimeNotifier.server.doLongOperation();
+                });
+            });
+        });
+    </script>
+    <script type="text/javascript">
+        // Helper code that updates the noty notification bar
+        var n;
+        function showOrUpdateSuccessMessage(message, timeout) {
+            if (n == null) {
+                n = noty({ text: message, type: 'success', timeout: timeout, maxVisible: 1 });
+            }
+            else {
+                n.setText(message);
+            }
+        }
+    </script>
+</body>
+</html>
