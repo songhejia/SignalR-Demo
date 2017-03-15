@@ -236,6 +236,9 @@
     <Content Include="SignalR.Sample\SignalR.StockTicker.js" />
     <Content Include="SignalR.Sample\StockTicker.css" />
     <Content Include="SignalR.Sample\StockTicker.html" />
+    <Content Include="SignalR.WX\jquery-1.10.2.min.js" />
+    <Content Include="SignalR.WX\jquery.color-2.1.2.min.js" />
+    <Content Include="SignalR.WX\WeiXin.html" />
     <Content Include="Site.Master" />
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="Web.config" />
@@ -244,6 +247,7 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
     <Content Include="Site.Mobile.Master" />
     <Content Include="SignalR.Sample\jquery-1.10.2.min.map" />
+    <Content Include="SignalR.WX\jquery-1.10.2.min.map" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -392,6 +396,10 @@
     <Compile Include="SignalR.Sample\Stock.cs" />
     <Compile Include="SignalR.Sample\StockTicker.cs" />
     <Compile Include="SignalR.Sample\StockTickerHub.cs" />
+    <Compile Include="SignalR.WX\Startup.cs" />
+    <Compile Include="SignalR.WX\User.cs" />
+    <Compile Include="SignalR.WX\WeiXin.cs" />
+    <Compile Include="SignalR.WX\WeiXinHub.cs" />
     <Compile Include="Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
